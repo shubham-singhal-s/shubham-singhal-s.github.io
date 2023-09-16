@@ -1,0 +1,36 @@
+.btn-skill {
+    background-image: linear-gradient(to bottom right, #f56301 0%, #F09819 100%);
+    background-size: 200% 100%;
+    background-position: 30%;
+    transition: background-position 0.2s ease-in-out;
+    border: none;
+    color: white;
+    margin: 8px;
+
+    &:hover {
+        background-position: 70%;
+    }
+     
+}
+
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #FF512F 15%, #F09819  51%, #FF512F  85%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 

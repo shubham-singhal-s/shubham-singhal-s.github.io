@@ -1,0 +1,68 @@
+@import '../../scss/colors';
+
+.skill-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: middle;
+}
+
+.skill-head {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 8px;
+    margin: 16px;
+    width: 100%;
+    text-align: center;
+    color: #707070dd;
+
+    @media screen and (max-width: 796px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-left: 4px;
+    }
+}
+
+.skill-info {
+    padding: 16px;
+    margin: 0 auto;
+    width: 95%;
+    text-align: center;
+    background-color: #aaa4;
+    border-bottom: 4px solid $blue;
+    text-align: left;
+    display: flex;
+    gap: 2px;
+
+    @media screen and (max-width: 796px) {
+        text-align: center;
+    }
+}
+
+.skill-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    .skill-content-container {
+        max-width: 60%;
+        .skill-content-header {
+            margin: 8px auto;
+            padding: 0 8px;
+            width: fit-content;
+            border-bottom: 2px solid $blue;
+        }
+
+        .skill-buttons {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+    }
+
+    
+}
