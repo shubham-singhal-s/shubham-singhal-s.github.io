@@ -1093,18 +1093,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function HomeComponent_div_36_Template(rf, ctx) {
+function HomeComponent_div_37_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 16)(1, "div", 17)(2, "mat-icon", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function HomeComponent_div_36_Template_mat_icon_click_2_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 17)(1, "div", 18)(2, "mat-icon", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function HomeComponent_div_37_Template_mat_icon_click_2_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r2);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r1.scrollTo("skills"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "keyboard_arrow_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "div", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
   }
 }
@@ -1126,9 +1126,9 @@ HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["�
   inputs: {
     onTop: "onTop"
   },
-  decls: 37,
+  decls: 38,
   vars: 1,
-  consts: [[1, "home-container"], [1, "home-header"], [1, "main-info"], [1, "title"], [1, "subtitle"], [1, "contacts"], ["color", "primary", "aria-label", "email"], [1, "contacts", "green"], ["color", "primary", "aria-label", "phone"], [1, "contacts", "blue"], ["aria-label", "linkedin", "svgIcon", "linkedin"], ["href", "https://www.linkedin.com/in/shubham-singhal-s/", "target", "_blank"], ["aria-label", "github", "svgIcon", "github"], ["href", "https://github.com/shubham-singhal-s", "target", "_blank"], ["color", "warn", "aria-label", "location"], ["class", "down", 4, "ngIf"], [1, "down"], [1, "scroll-container"], ["color", "primary", 1, "hover", 3, "click"], [1, "circle"]],
+  consts: [[1, "home-container"], [1, "home-header"], [1, "main-info"], [1, "title"], [1, "subtitle"], [1, "contacts"], ["color", "primary", "aria-label", "email"], [1, "contacts", "green"], ["color", "primary", "aria-label", "phone"], [1, "contacts", "blue"], ["aria-label", "linkedin", "svgIcon", "linkedin"], ["href", "https://www.linkedin.com/in/shubham-singhal-s/", "target", "_blank"], ["aria-label", "github", "svgIcon", "github"], ["href", "https://github.com/shubham-singhal-s", "target", "_blank"], ["color", "warn", "aria-label", "location"], ["src", "/assets/images/me.png", "height", "200px", "alt", "Shubham Singhal", 1, "profile-pic"], ["class", "down", 4, "ngIf"], [1, "down"], [1, "scroll-container"], ["color", "primary", 1, "hover", 3, "click"], [1, "circle"]],
   template: function HomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "h1", 3);
@@ -1161,24 +1161,26 @@ HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25, "location_on");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, " Sydney, NSW ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "blockquote")(28, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, " As an accomplished full-stack developer boasting over three years of hands-on experience and armed with aBachelor's degree in Computer Science complemented by a Master's in Artificial Intelligence, I have a distinguished trackrecord ofcontributing to numerous AI-driven projects. My proficiency extends across a spectrum of cutting-edgetechnologies,including Angular, React, Spring, Databases, and Python, enabling me to seamlessly navigate both Backend andFrontenddevelopment landscapes. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, " Furthermore, my expertise extends beyond development to encompass a deep understanding of deployment procedures and proficient CI/CD management. Beyond the confines of my professional responsibilities, I am deeply engrossed in the world of AI, continually exploring and refining AI models. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, " In addition to my technical prowess, I possess a keen eye for design, crafting visually striking designs. ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35, " This multifaceted skill set embodies my commitment to innovation, technical excellence, and creative finesse, making me a well-rounded candidate prepared to excel in the field of Artificial Intelligence. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](36, HomeComponent_div_36_Template, 5, 0, "div", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](27, "img", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "blockquote")(29, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30, " As an accomplished full-stack developer boasting over three years of hands-on experience and armed with aBachelor's degree in Computer Science complemented by a Master's in Artificial Intelligence, I have a distinguished trackrecord ofcontributing to numerous AI-driven projects. My proficiency extends across a spectrum of cutting-edgetechnologies,including Angular, React, Spring, Databases, and Python, enabling me to seamlessly navigate both Backend andFrontenddevelopment landscapes. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, " Furthermore, my expertise extends beyond development to encompass a deep understanding of deployment procedures and proficient CI/CD management. Beyond the confines of my professional responsibilities, I am deeply engrossed in the world of AI, continually exploring and refining AI models. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34, " In addition to my technical prowess, I possess a keen eye for design, crafting visually striking designs. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](36, " This multifaceted skill set embodies my commitment to innovation, technical excellence, and creative finesse, making me a well-rounded candidate prepared to excel in the field of Artificial Intelligence. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](37, HomeComponent_div_37_Template, 5, 0, "div", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](36);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](37);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.onTop);
     }
   },
