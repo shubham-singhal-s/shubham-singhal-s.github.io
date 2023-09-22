@@ -6,9 +6,12 @@
     "start": "ng serve",
     "host": "ng serve --host 0.0.0.0 -o",
     "build": "ng build",
+    "pbuild": "ng build --configuration=production",
+    "cname": "echo shubhamsinghal.me > dist/shubham-resume/CNAME",
+    "ghpages": "gh-pages -d dist/shubham-resume",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run build --configuration=production && gh-pages -d dist/shubham-resume"
+    "deploy": "npm run pbuild && npm run cname && npm run ghpages"
   },
   "private": true,
   "dependencies": {
