@@ -19,6 +19,7 @@ import { SkillButtonComponent } from './accessories/skill-button/skill-button.co
 import { SkillPageComponent } from './skill-page/skill-page.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EducationComponent } from './education/education.component';
     SkillButtonComponent,
     SkillPageComponent,
     ExperienceComponent,
-    EducationComponent
+    EducationComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

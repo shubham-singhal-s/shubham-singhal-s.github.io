@@ -12,6 +12,7 @@ export class ScrollerComponent implements AfterViewInit, OnDestroy {
   @ViewChild('skills', { read: ElementRef, static: false }) private skills!: ElementRef;
   @ViewChild('experience', { read: ElementRef, static: false }) private experience!: ElementRef;
   @ViewChild('education', { read: ElementRef, static: false }) private education!: ElementRef;
+  @ViewChild('projects', { read: ElementRef, static: false }) private projects!: ElementRef;
 
   @Input() currentPage = 0;
   @Output('setPage') setPage = new EventEmitter<number>();
@@ -43,6 +44,7 @@ export class ScrollerComponent implements AfterViewInit, OnDestroy {
     this.midPoints[1] = window.scrollY + this.skills.nativeElement.getBoundingClientRect().top + (this.skills.nativeElement.scrollHeight / 2);
     this.midPoints[2] = window.scrollY + this.experience.nativeElement.getBoundingClientRect().top + (this.experience.nativeElement.scrollHeight / 2);
     this.midPoints[3] = window.scrollY + this.education.nativeElement.getBoundingClientRect().top + (this.education.nativeElement.scrollHeight / 2);
+    this.midPoints[4] = window.scrollY + this.projects.nativeElement.getBoundingClientRect().top + (this.projects.nativeElement.scrollHeight / 2);
   }
 
   scrollToPage(page: string) {
@@ -62,6 +64,10 @@ export class ScrollerComponent implements AfterViewInit, OnDestroy {
       case 'education':
         this.education.nativeElement.scrollIntoView({ behavior: 'smooth' });
         this.setPage.emit(3);
+        break;
+      case 'projects':
+        this.projects.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        this.setPage.emit(4);
         break;
       default:
         break;

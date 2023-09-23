@@ -23,8 +23,9 @@ export class HeaderComponent implements OnInit {
   routes = [
     { path: 'home', icon: 'home', title: 'Home' },
     { path: 'skills', icon: 'code', title: 'Skills' },
-    { path: 'experience', icon: 'domain', title: 'Experience' },
+    { path: 'experience', icon: 'work', title: 'Experience' },
     { path: 'education', icon: 'school', title: 'Education' },
+    { path: 'projects', icon: 'domain', title: 'Projects & Internships' },
   ]
 
   constructor(private themeService: ThemeService) {
