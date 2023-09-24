@@ -27,6 +27,10 @@
 
     .skill-container {
         padding: 8px 24px;
+
+        @media screen and (max-width: 600px) {
+            padding: 8px; 
+        }
     }
 }
 

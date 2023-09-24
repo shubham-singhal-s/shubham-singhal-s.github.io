@@ -62,6 +62,10 @@
             flex-flow: row wrap;
             justify-content: center;
         }
+
+        @media screen and (max-width: 796px) {
+            max-width: 100%;
+        }
     }
 
     

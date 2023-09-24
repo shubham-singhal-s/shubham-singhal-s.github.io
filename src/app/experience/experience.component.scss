@@ -52,10 +52,22 @@
             max-width: 100%;
         }
 
+        @media screen and (max-width: 796px) {
+            padding: 8px;
+            
+            &.tech {
+                text-align: center;
+            }
+        }
+
         .job-description-title {
             font-size: 16px;
             font-weight: 600;
             text-align: left;
+
+            @media screen and (max-width: 796px) {
+                text-align: center;
+            }
         }
 
         ul {
@@ -71,6 +83,11 @@
                 li {
                     list-style-type: circle;
                 }
+            }
+
+            @media screen and (max-width: 796px) {
+                padding: 0;
+                padding-left: 8px;
             }
         }
     }

@@ -40,16 +40,21 @@
                 @media screen and (max-width: 600px) {
                     line-height: 1;
                 }
+
+                @media screen and (max-width: 796px) {
+                    padding: 0 8px;
+                }
             }
 
             .institution {
                 font-size: 18pt;
                 font-weight: 500;
-                margin: 16px;
+                margin: 16px 0 8px 0;
+                text-decoration: solid underline;
             }
     
             .timeline {
-                font-size: 14pt;
+                font-size: 12pt;
                 font-weight: 400;
                 margin-bottom: 8px;
             }
@@ -88,6 +93,11 @@
                 @media screen and (max-width: 796px) {
                     text-align: center;
                     width: 95%;
+                    padding: 16px 0;
+
+                    ul {
+                        padding-left: 18px;
+                    }
                 }
             }
         }
