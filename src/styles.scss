@@ -59,6 +59,10 @@ $background-color: #000;
 .darkMode {
   @include mat.all-component-colors($angular-dark-theme);
 
+  .cyanLinks {
+    color: #00d0ff !important;
+  }
+
   .mat-drawer {
     background-color: lighten($background-color, 10%);
   }

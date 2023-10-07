@@ -20,6 +20,7 @@ import { SkillPageComponent } from './skill-page/skill-page.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { LAZYLOAD_IMAGE_HOOKS, LazyLoadImageModule, ScrollHooks } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,10 @@ import { ProjectsComponent } from './projects/projects.component';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    LazyLoadImageModule
   ],
-  providers: [],
+  providers: [{ provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

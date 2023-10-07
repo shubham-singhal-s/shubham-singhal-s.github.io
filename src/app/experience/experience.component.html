@@ -5,7 +5,7 @@
     </div>
     <div class="job-container">
         <div class="job-header">
-            <img [src]="'assets/images/' + (lightMode ? 'dp.svg' : 'dp_dark.svg')" alt="Digital Purpose">
+            <img [lazyLoad]="'assets/images/' + (lightMode ? 'dp.svg' : 'dp_dark.svg')" alt="Digital Purpose">
             <div class="job-title">
                 <div class="job-role">Full-Stack Developer</div>
                 <div class="job-timeline">April 2022 - Current</div>
@@ -49,7 +49,7 @@
 
     <div class="job-container">
         <div class="job-header">
-            <img src="assets/images/amadeus.png" alt="Amadeus" width="200">
+            <img [lazyLoad]="'assets/images/amadeus.webp'" alt="Amadeus" width="200">
             <div class="job-title">
                 <div class="job-role">Full-Stack Developer</div>
                 <div class="job-timeline">July 2019 - July 2021</div>

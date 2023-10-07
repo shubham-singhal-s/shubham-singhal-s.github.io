@@ -9,7 +9,7 @@
             <div class="title">
                 Master of Artificial Intelligence
             </div>
-            <img src="assets/images/wsu.webp" width="100" class="logo">
+            <img [lazyLoad]="'assets/images/wsu.webp'" alt="Western Sydney University" width="100" class="logo">
             <div class="institution">
                 Western Sydney University
             </div>
@@ -37,7 +37,7 @@
             <div class="title">
                 Bachelor of Computer Science
             </div>
-            <img [src]="'assets/images/manipal_' + (lightTheme ? 'light' : 'dark') + '.png'" width="200" class="logo">
+            <img [lazyLoad]="'assets/images/manipal_' + (lightTheme ? 'light' : 'dark') + '.webp'" width="200" alt="Manipal University" class="logo">
             <div class="institution">
                 Manipal University
             </div>
