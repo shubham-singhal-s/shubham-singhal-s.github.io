@@ -2,77 +2,33 @@ import { SkillTab } from '../models/skill.model';
 
 export const skills: SkillTab[] = [
   {
-    name: 'AI',
+    name: 'AI and Machine Learning',
     nav: 'ai',
-    header: 'Artificial Intelligence',
+    header: 'AI and Machine Learning',
     content: `
-    I have extensive AI expertise that extends beyond my Masters degree (with a major in Data Science), gained through research, internships, and 
-    projects. My Intelligent Systems major in undergrad further strengthened my skills. I've worked on 
-    Natural Language Processing, Computer Vision, Chatbots, image labeling and generation, predictive systems, and have data 
-    processing, analysis, and visualization skills. I have also delved into AWS Sagemaker and their HuggingFace integrations to gain insights about production ready AI systems and their deployments.
-    I'm excited to keep pushing AI's boundaries.
+    I have extensive AI and Machine Learning expertise, including LLMs, prompt engineering, agentic AI, and integration with various Large Language Models. My core skills include TensorFlow, Keras, PyTorch, Scikit-Learn, and R, as well as experience with production-ready AI systems and deployments.
     `,
     skills: [
       {
-        name: 'Technologies',
+        name: 'LLMs & Agentic AI',
         items: [
           {
-            name: 'Regression',
-            link: 'https://en.wikipedia.org/wiki/Regression_analysis',
+            name: 'Prompt Engineering',
+            link: '#',
           },
           {
-            name: 'Classification',
-            link: 'https://en.wikipedia.org/wiki/Statistical_classification',
+            name: 'Agentic AI',
+            link: '#',
           },
           {
-            name: 'Clustering',
-            link: 'https://en.wikipedia.org/wiki/Cluster_analysis',
-          },
-          {
-            name: 'Natural Language Processing',
-            link: 'https://en.wikipedia.org/wiki/Natural_language_processing',
-          },
-          {
-            name: 'Natural Language Understanding',
-            link: 'https://en.wikipedia.org/wiki/Natural-language_understanding',
-          },
-          {
-            name: 'Computer Vision',
-            link: 'https://en.wikipedia.org/wiki/Computer_vision',
-          },
-          {
-            name: 'Neural Networks',
-            link: 'https://en.wikipedia.org/wiki/Artificial_neural_network',
-          },
-          {
-            name: 'Deep Learning',
-            link: 'https://en.wikipedia.org/wiki/Deep_learning',
-          },
-          {
-            name: 'GANs',
-            link: 'https://en.wikipedia.org/wiki/Generative_adversarial_network',
-          },
-          {
-            name: 'LLM',
-            link: 'https://en.wikipedia.org/wiki/Large_language_model',
+            name: 'LLM Integration',
+            link: '#',
           },
         ],
       },
       {
-        name: 'Frameworks',
+        name: 'Core ML Frameworks',
         items: [
-          {
-            name: 'OpenAI (ChatGPT)',
-            link: 'https://platform.openai.com/docs/guides/gpt',
-          },
-          {
-            name: 'AWS Sagemaker',
-            link: 'https://aws.amazon.com/sagemaker/',
-          },
-          {
-            name: 'HuggingFace',
-            link: 'https://huggingface.co/',
-          },
           {
             name: 'TensorFlow',
             link: 'https://www.tensorflow.org/',
@@ -93,10 +49,6 @@ export const skills: SkillTab[] = [
             name: 'R',
             link: 'https://www.r-project.org/',
           },
-          {
-            name: 'Python',
-            link: 'https://www.python.org/',
-          }
         ],
       },
     ],
@@ -106,33 +58,41 @@ export const skills: SkillTab[] = [
     nav: 'frontend',
     header: 'Frontend Development',
     content: `
-    I possess an comprehensive background in frontend development, encompassing a range of technologies and concepts. 
-    I am proficient in React, React Native, and Angular, enabling me to craft dynamic and responsive user interfaces. 
-    My expertise extends to TypeScript, HTML, JavaScript, CSS, and Bootstrap, which I employ to create visually 
-    appealing and well-functioning applications. I am dedicated to ensuring accessibility by implementing semantic HTML,
-    ARIA roles, and responsive design principles. Moreover, I prioritize user experience and adhere to design 
-    best practices, incorporating research-driven insights into intuitive interfaces. This diverse skill set allows 
-    me to develop applications that are both visually engaging and user-friendly, delivering substantial value.
+    I possess a comprehensive background in frontend development, encompassing a range of technologies and concepts. 
+    I am proficient in React, React Native, Angular, and Node, enabling me to craft dynamic and responsive user interfaces and full-stack applications. 
+    My expertise extends to Redux, TypeScript, JavaScript, HTML, CSS, and SCSS, which I employ to create visually appealing and well-functioning applications. I am dedicated to ensuring accessibility by implementing semantic HTML, ARIA roles, and responsive design principles. Moreover, I prioritize user experience and adhere to design best practices, incorporating research-driven insights into intuitive interfaces. This diverse skill set allows me to develop applications that are both visually engaging and user-friendly, delivering substantial value.
     `,
     skills: [
       {
-        name: 'Frameworks',
+        name: 'Frameworks & Libraries',
         items: [
-          {
-            name: 'Angular',
-            link: 'https://angular.io/',
-          },
           {
             name: 'React',
             link: 'https://reactjs.org/',
+          },
+          {
+            name: 'Redux',
+            link: 'https://redux.js.org/',
           },
           {
             name: 'React Native',
             link: 'https://reactnative.dev/',
           },
           {
+            name: 'Angular',
+            link: 'https://angular.io/',
+          },
+          {
+            name: 'Node',
+            link: 'https://nodejs.org/',
+          },
+          {
             name: 'Wordpress',
             link: 'https://wordpress.com/',
+          },
+          {
+            name: 'Material UI',
+            link: 'https://mui.com/',
           },
           {
             name: 'Jasmine',
@@ -160,27 +120,10 @@ export const skills: SkillTab[] = [
             link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
           },
           {
-            name: 'Bootstrap',
-            link: 'https://getbootstrap.com/',
-          },
-          {
-            name: 'Material UI',
-            link: 'https://material-ui.com/',
-          },
-          {
-            name: 'SASS',
+            name: 'SCSS',
             link: 'https://sass-lang.com/',
           },
-          {
-            name: 'Figma',
-            link: 'https://www.figma.com/',
-          },
-          {
-            name: 'Adobe Suite',
-            link: 'https://www.adobe.com/',
-          }
         ],
-        
       }
     ],
   },
@@ -189,22 +132,30 @@ export const skills: SkillTab[] = [
     nav: 'backend',
     header: 'Backend Development',
     content: `
-    Along with the extensive knowledge of frontend development, I have a strong background in backend development.
-    I have worked in a Full-Stack capacity for multiple projects, and have experience with Java, Spring Boot, Python and various databses.
+    Along with extensive knowledge of frontend development, I have a strong background in backend development.
+    I have worked in a Full-Stack capacity for multiple projects, and have experience with Java, Spring Boot, FastAPI, Python, and various databases.
     I also have a deep understanding of various integrations and APIs, and have worked with REST and XML APIs.
     Working on large scale projects has given me a keen eye for performance and scalability, by making use of caching, pagination and other techniques.
     `,
     skills: [
       {
-        name: 'Frameworks',
+        name: 'Frameworks & Tools',
         items: [
           {
-            name: 'Spring/Spring Boot',
+            name: 'Spring Boot',
             link: 'https://spring.io/projects/spring-boot',
+          },
+          {
+            name: 'FastAPI',
+            link: 'https://fastapi.tiangolo.com/',
           },
           {
             name: 'Hibernate',
             link: 'https://hibernate.org/',
+          },
+          {
+            name: 'Kafka',
+            link: 'https://kafka.apache.org/',
           },
           {
             name: 'Flask',
@@ -217,60 +168,28 @@ export const skills: SkillTab[] = [
         ],
       },
       {
-        name: 'Languages',
+        name: 'Languages & Databases',
         items: [
           {
             name: 'Java',
             link: 'https://www.java.com/en/',
           },
           {
-            name: 'JUnit',
-            link: 'https://junit.org/junit5/',
-          },
-          {
             name: 'Python',
             link: 'https://www.python.org/',
-          },
-          {
-            name: 'Apex',
-            link: 'https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro_what_is_apex.htm',
           },
           {
             name: 'SQL',
             link: 'https://en.wikipedia.org/wiki/SQL',
           },
           {
-            name: 'MongoDB',
-            link: 'https://www.mongodb.com/',
-          },
-          {
             name: 'PostgreSQL',
             link: 'https://www.postgresql.org/',
           },
           {
-            name: 'Flyway',
-            link: 'https://flywaydb.org/',
+            name: 'MongoDB',
+            link: 'https://www.mongodb.com/',
           },
-          {
-            name: 'JavaScript',
-            link: 'https://www.javascript.com/',
-          },
-          {
-            name: 'REST APIs',
-            link: 'https://www.redhat.com/en/topics/api/what-is-a-rest-api',
-          },
-          {
-            name: 'XML',
-            link: 'https://developer.mozilla.org/en-US/docs/Web/XML',
-          },
-          {
-            name: 'JSON',
-            link: 'https://www.json.org/json-en.html',
-          },
-          {
-            name: 'YAML',
-            link: 'https://yaml.org/',
-          }
         ],
       },
     ],
@@ -280,13 +199,34 @@ export const skills: SkillTab[] = [
     nav: 'cicd',
     header: 'CI/CD - Deployments and Versioning',
     content: `
-    Knowing how to code is only half the battle, it is essential for a developer to be experienced with Continous Integration and Deployments.
+    Knowing how to code is only half the battle, it is essential for a developer to be experienced with Continuous Integration and Deployments.
     With my knowledge of various Versioning Systems and Deployment Platforms, I have managed multiple projects' integrations and deployments.
-    I have also worked with hotfixes, rollbacks, load-testing and production database management.
+    I have also worked with hotfixes, rollbacks, load-testing and production database management. I am experienced with Docker, Bamboo, Git, Bash, and a wide range of AWS offerings including S3, EC2, RDS, DynamoDB, DMS, and more.
     `,
     skills: [
       {
-        name: 'Platforms',
+        name: 'Platforms & Tools',
+        items: [
+          {
+            name: 'Docker',
+            link: 'https://www.docker.com/',
+          },
+          {
+            name: 'Bamboo',
+            link: 'https://www.atlassian.com/software/bamboo',
+          },
+          {
+            name: 'Git',
+            link: 'https://git-scm.com/',
+          },
+          {
+            name: 'Bash',
+            link: 'https://www.gnu.org/software/bash/',
+          },
+        ],
+      },
+      {
+        name: 'AWS',
         items: [
           {
             name: 'AWS S3',
@@ -297,68 +237,35 @@ export const skills: SkillTab[] = [
             link: 'https://aws.amazon.com/ec2/',
           },
           {
-            name: 'AWS Elastic Beanstalk',
-            link: 'https://aws.amazon.com/elasticbeanstalk/',
+            name: 'AWS RDS',
+            link: 'https://aws.amazon.com/rds/',
           },
           {
-            name: 'AWS Cloudfront',
-            link: 'https://aws.amazon.com/cloudfront/',
+            name: 'AWS DynamoDB',
+            link: 'https://aws.amazon.com/dynamodb/',
           },
           {
-            name: 'Bitbucket',
-            link: 'https://bitbucket.org/',
+            name: 'AWS DMS',
+            link: 'https://aws.amazon.com/dms/',
           },
-          {
-            name: 'Github',
-            link: 'https://github.com/shubham21197'
-          },
-        ]
-      },
-      {
-        name: 'Technologies',
-        items: [
-          {
-            name: 'Git',
-            link: 'https://git-scm.com/',
-          },
-          {
-            name: 'Docker',
-            link: 'https://www.docker.com/',
-          },
-          {
-            name: 'JMeter',
-            link: 'https://jmeter.apache.org/',
-          },
-          {
-            name: 'Bash',
-            link: 'https://www.gnu.org/software/bash/',
-          }
         ],
-      }
-
+      },
     ],
   },
   {
-    name: 'Integrations',
-    nav: 'integrations',
-    header: '3rd Party Integrations',
+    name: 'Frameworks/Tools',
+    nav: 'frameworks',
+    header: 'Frameworks and Tools',
     content: `
-    Sometimes it is not practical to develop everything from scratch, and it is essential to know how to integrate 3rd party services.
-    I have worked with multiple integrations, including payment gateways, email services, authentication providers and CRM softwares.
-    My experience in these fields allow me to quickly integrate new services and APIs into existing projects, while also being able to
-    manage integration and error handlding flows to provide a seamless experience.
+    I have experience with a wide range of frameworks and tools, including Stripe, APIGEE, Salesforce, Wordpress, Kafka, material libraries, integration libraries, and various in-house tools.
     `,
     skills: [
       {
-        name: 'Technologies',
+        name: 'Frameworks & Tools',
         items: [
           {
             name: 'Stripe',
             link: 'https://stripe.com/',
-          },
-          {
-            name: 'PayPal',
-            link: 'https://www.paypal.com/',
           },
           {
             name: 'APIGEE',
@@ -369,19 +276,28 @@ export const skills: SkillTab[] = [
             link: 'https://www.salesforce.com/',
           },
           {
-            name: 'SendGrid',
-            link: 'https://sendgrid.com/',
+            name: 'Wordpress',
+            link: 'https://wordpress.com/',
           },
           {
-            name: 'Mailchimp',
-            link: 'https://mailchimp.com/',
+            name: 'Kafka',
+            link: 'https://kafka.apache.org/',
           },
           {
-            name: 'APIGEE',
-            link: 'https://cloud.google.com/apigee',
+            name: 'Material Libraries',
+            link: 'https://mui.com/',
           },
-        ]
-      }
+          {
+            name: 'Integration Libraries',
+            link: '#',
+          },
+          {
+            name: 'In-house Tools',
+            link: '#',
+          },
+        ],
+      },
     ],
   },
+  
 ];
