@@ -1,8 +1,19 @@
+import { BrowserRouter } from "react-router";
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { AppRouter } from "./router/app-router";
+import { AppSidebar } from "./views/sidebar";
+
 function App() {
   return (
-    <div className="mx-auto max-w-sm shadow-lg rounded-xl px-8 py-4 outline-1 mt-2">
-      Hello
-    </div>
+    <BrowserRouter>
+      <SidebarProvider>
+        <AppSidebar />
+        <main>
+          <SidebarTrigger />
+          <AppRouter />
+        </main>
+      </SidebarProvider>
+    </BrowserRouter>
   );
 }
 
