@@ -101,7 +101,7 @@ export const Home = () => {
         "justify-center": !hasMessages,
         "justify-start": hasMessages && !isLoading,
       })}
-      style={{ maxHeight: "calc(100vh - 28px)" }}
+      style={{ maxHeight: "calc(100dvh - 28px)" }}
     >
       {!hasMessages && <Introduction />}
       <TextareaAutosize
