@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { getErrorMessage } from "@/lib/getErrorMessage";
 import { cn } from "@/lib/utils";
 import { useSendChatMutation } from "@/redux/queries/cv-api-query";
+import { markForReset } from "@/redux/reducers/turnstile";
 import type { GeminiChatMessage } from "@/types/ai";
 import { BrushCleaning, Loader, Send } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import TextareaAutosize from "react-textarea-autosize";
 import { Chat } from "./chats/chat";
 import { Introduction } from "./chats/introduction";
@@ -15,15 +17,37 @@ export const Home = () => {
   const [value, setValue] = useState("");
   const [messages, setMessages] = useState<GeminiChatMessage[]>([]);
 
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
+
+  const dispatch = useDispatch();
   const { token } = useSelector((state: any) => state.turnstile);
 
   useEffect(() => {
     if (data && Array.isArray(data)) {
       setMessages((m) => [...m, ...data]);
     }
-  }, [data]);
+  }, [data, dispatch]);
+
+  useEffect(() => {
+    if (error) {
+      setMessages((prev) => {
+        if (prev.length === 0) return prev;
+        const last = prev[prev.length - 1];
+        if (last.role === "user") {
+          setValue(last.content || "");
+          return prev.slice(0, -1);
+        }
+        return prev;
+      });
+    }
+  }, [error]);
 
   const hasMessages = useMemo(() => messages?.length > 0, [messages]);
+
+  const loading = useMemo(
+    () => isLoading || token === "EMPTY",
+    [isLoading, token]
+  );
 
   const onHeightChange = (height: number) => {
     if (height >= 162) {
@@ -34,7 +58,7 @@ export const Home = () => {
   };
 
   const enterPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (!token) return;
+    if (!token || token === "EMPTY") return;
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       submit();
@@ -42,7 +66,9 @@ export const Home = () => {
   };
 
   const submit = async () => {
+    if (loading || !token) return;
     if (value.trim() === "") return;
+
     const latestMessages = [
       ...messages,
       { role: "user" as "user", content: value },
@@ -51,8 +77,9 @@ export const Home = () => {
       messages: latestMessages,
     };
     setMessages(latestMessages);
-    await sendChat({ data: request, token });
+    dispatch(markForReset());
     setValue("");
+    await sendChat({ data: request, token });
   };
 
   const clear = () => {
@@ -61,6 +88,12 @@ export const Home = () => {
     setMessages([]);
     reset();
   };
+
+  const onFocus = useCallback(() => {
+    setTimeout(() => {
+      inputRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  }, [inputRef]);
 
   return (
     <div
@@ -72,7 +105,9 @@ export const Home = () => {
     >
       {!hasMessages && <Introduction />}
       <TextareaAutosize
+        ref={inputRef}
         onHeightChange={onHeightChange}
+        onFocus={onFocus}
         className={cn(
           "border-0 border-b-2 border-b-gray-300 rounded-none",
           "p-2 mb-4 focus:border-b-gray-900 focus:outline-none w-[90%]",
@@ -95,23 +130,23 @@ export const Home = () => {
         <Button
           variant="ghost"
           className="rounded-none"
-          disabled={isLoading}
+          disabled={loading}
           onClick={clear}
         >
-          {isLoading ? <Loader className="animate-spin" /> : <BrushCleaning />}
+          {loading ? <Loader className="animate-spin" /> : <BrushCleaning />}
           Clear
         </Button>
         <Button
           className="rounded-none"
-          disabled={isLoading || !token}
+          disabled={loading || !token}
           onClick={submit}
         >
           Submit
-          {isLoading ? <Loader className="animate-spin" /> : <Send />}
+          {loading ? <Loader className="animate-spin" /> : <Send />}
         </Button>
       </div>
       {error && (
-        <div className="text-red-500 mt-2">Error: {JSON.stringify(error)}</div>
+        <div className="text-red-500 mt-2">{getErrorMessage(error)}</div>
       )}
       {!token && (
         <div className="text-red-500 mt-2">
