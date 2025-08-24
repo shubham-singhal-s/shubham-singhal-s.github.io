@@ -4,6 +4,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -43,6 +44,12 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar>
+      <SidebarHeader>
+        <div className="flex flex-col items-start pt-2 pl-2 pb-0">
+          <p className="text-lg font-semibold">Shubham Singhal</p>
+          <p className="text-sm text-muted-foreground">Full Stack | AI</p>
+        </div>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Browse Manually</SidebarGroupLabel>
