@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter } from "react-router";
 import Turnstile, { useTurnstile } from "react-turnstile";
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { useAuthenticateMutation } from "./redux/queries/auth-query";
 import { resetCompleted, setToken } from "./redux/reducers/turnstile";
 import { AppRouter } from "./router/app-router";
 import { AppSidebar } from "./views/sidebar";
@@ -10,6 +11,7 @@ import { AppSidebar } from "./views/sidebar";
 function App() {
   const dispatch = useDispatch();
   const { shouldReset } = useSelector((state: any) => state.turnstile);
+  const [authenticate] = useAuthenticateMutation();
   const turnstile = useTurnstile();
 
   const production = useMemo(() => {
@@ -33,9 +35,16 @@ function App() {
           production ? "0x4AAAAAABuVwktvjjjHNKe2" : "1x00000000000000000000AA"
         }
         appearance="interaction-only"
-        onSuccess={(token) => {
+        onSuccess={async (token) => {
           console.info("Turnstile success");
-          dispatch(setToken(token));
+          try {
+            const response = await authenticate({ token }).unwrap();
+            if (response?.token) {
+              dispatch(setToken(response.token));
+            }
+          } catch (e) {
+            alert(JSON.stringify(e));
+          }
         }}
         onError={(error) => {
           console.info("Turnstile error:", error);

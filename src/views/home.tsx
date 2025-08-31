@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { getErrorMessage } from "@/lib/getErrorMessage";
 import { cn } from "@/lib/utils";
 import { useSendChatMutation } from "@/redux/queries/cv-api-query";
-import { markForReset } from "@/redux/reducers/turnstile";
 import type { GeminiChatMessage } from "@/types/ai";
 import { BrushCleaning, Loader, Send } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -77,7 +76,6 @@ export const Home = () => {
       messages: latestMessages,
     };
     setMessages(latestMessages);
-    dispatch(markForReset());
     setValue("");
     await sendChat({ data: request, token });
   };
