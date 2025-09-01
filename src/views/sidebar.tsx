@@ -8,6 +8,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 import { Building, GraduationCap, Home, Info, TrendingUp } from "lucide-react";
@@ -42,6 +43,14 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const { open, isMobile, setOpenMobile } = useSidebar();
+
+  const handleClick = () => {
+    if (isMobile && open) {
+      setOpenMobile(false);
+    }
+  };
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -57,7 +66,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton onClick={handleClick} asChild>
                     <Link to={item.url} className="flex items-center gap-2">
                       <item.icon />
                       <span>{item.title}</span>

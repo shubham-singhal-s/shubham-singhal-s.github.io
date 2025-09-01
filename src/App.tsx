@@ -43,7 +43,7 @@ function App() {
               dispatch(setToken(response.token));
             }
           } catch (e) {
-            alert(JSON.stringify(e));
+            dispatch(setToken(null));
           }
         }}
         onError={(error) => {

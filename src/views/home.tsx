@@ -107,7 +107,7 @@ export const Home = () => {
         onHeightChange={onHeightChange}
         onFocus={onFocus}
         className={cn(
-          "border-0 border-b-2 border-b-gray-300 rounded-none",
+          "border-0 border-b-2 border-b-gray-300 rounded-none min-h-1",
           "p-2 mb-4 focus:border-b-gray-900 focus:outline-none w-[90%]",
           {
             "inset-shadow-sm": showShadow,
@@ -147,8 +147,10 @@ export const Home = () => {
         <div className="text-red-500 mt-2">{getErrorMessage(error)}</div>
       )}
       {!token && (
-        <div className="text-red-500 mt-2">
-          Chat feature is currently unable as your browser failed to verify.
+        <div className="text-red-500 text-sm mt-2 px-2 text-center">
+          Chat is temporarily unavailable because your browser couldn't be
+          verified. You can try again later or continue exploring the rest of
+          the site.
         </div>
       )}
       {hasMessages && <Chat data={messages} />}
