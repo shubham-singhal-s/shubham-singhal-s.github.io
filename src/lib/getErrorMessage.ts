@@ -3,18 +3,29 @@ import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
 export function getErrorMessage(error: unknown): string {
   if (!error) return "Unknown error";
+  console.error(error);
 
-  // FetchBaseQueryError
-  if (typeof error === "object" && error !== null && "status" in error) {
+  // Type guard for FetchBaseQueryError
+  if (
+    typeof error === "object" &&
+    error !== null &&
+    "status" in error &&
+    "data" in error
+  ) {
     const fetchError = error as FetchBaseQueryError;
-    if (typeof fetchError.data === "string") return fetchError.data;
-    if (
-      typeof fetchError.data === "object" &&
-      fetchError.data !== null &&
-      "message" in fetchError.data
-    ) {
-      return String((fetchError.data as any).message);
+    const data = fetchError.data;
+    // If data is a string, return it
+    if (typeof data === "string") return data;
+    // If data is an object, check for error/message keys
+    if (typeof data === "object" && data !== null) {
+      if ("error" in data && typeof (data as any).error === "string") {
+        return String((data as any).error);
+      }
+      if ("message" in data && typeof (data as any).message === "string") {
+        return String((data as any).message);
+      }
     }
+    // Fallback to status
     return `Error status: ${fetchError.status}`;
   }
 

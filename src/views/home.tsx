@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { getErrorMessage } from "@/lib/getErrorMessage";
 import { cn } from "@/lib/utils";
@@ -144,13 +150,27 @@ export const Home = () => {
         </Button>
       </div>
       {error && (
-        <div className="text-red-500 mt-2">{getErrorMessage(error)}</div>
+        <Accordion
+          type="single"
+          className="text-red-500 mt-2 decoration-0 text-center"
+          collapsible
+        >
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Failed to send message to AI ☹️</AccordionTrigger>
+            <AccordionContent>{getErrorMessage(error)}</AccordionContent>
+          </AccordionItem>
+        </Accordion>
       )}
       {!token && (
         <div className="text-red-500 text-sm mt-2 px-2 text-center">
           Chat is temporarily unavailable because your browser couldn't be
-          verified. You can try again later or continue exploring the rest of
-          the site.
+          verified.
+        </div>
+      )}
+      {(error || !token) && (
+        <div className="text-gray-500 text-sm mt-2 px-2 text-center">
+          Please try again later, in the meantime, you can browse other sections
+          of my portfolio!
         </div>
       )}
       {hasMessages && <Chat data={messages} />}

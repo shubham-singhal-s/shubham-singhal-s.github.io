@@ -6,7 +6,10 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()].filter(Boolean),
+  plugins: [
+    react({ babel: { plugins: ["babel-plugin-react-compiler"] } }),
+    tailwindcss(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
