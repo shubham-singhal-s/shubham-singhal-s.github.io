@@ -12,6 +12,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { cn } from "@/lib/utils";
 
 import {
   Building,
@@ -22,7 +23,8 @@ import {
   Sun,
   TrendingUp,
 } from "lucide-react";
-import { Link } from "react-router";
+import { useMemo } from "react";
+import { Link, useLocation } from "react-router";
 
 const items = [
   {
@@ -55,6 +57,11 @@ const items = [
 export function AppSidebar() {
   const { open, isMobile, setOpenMobile } = useSidebar();
   const { setTheme, theme } = useTheme();
+  const location = useLocation();
+
+  const selected = useMemo(() => {
+    return location.pathname.split("/")[1] || "home";
+  }, [location.pathname]);
 
   const handleClick = () => {
     if (isMobile && open) {
@@ -78,7 +85,13 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton onClick={handleClick} asChild>
-                    <Link to={item.url} className="flex items-center gap-2">
+                    <Link
+                      to={item.url}
+                      className={cn("flex items-center gap-2", {
+                        "bg-muted-foreground/8":
+                          item.title?.toLowerCase() === selected,
+                      })}
+                    >
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>

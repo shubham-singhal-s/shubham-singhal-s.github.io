@@ -61,7 +61,7 @@ function App() {
         />
         <SidebarProvider>
           <AppSidebar />
-          <main className="w-full">
+          <main className="w-full max-h-dvh">
             <SidebarTrigger className="size-10 m-1" />
             <AppRouter />
           </main>

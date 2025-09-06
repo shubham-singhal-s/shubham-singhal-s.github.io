@@ -101,11 +101,13 @@ export const Home = () => {
 
   return (
     <div
-      className={cn("flex flex-col items-center h-screen w-full", {
+      className={cn("flex flex-col items-center h-dvh w-full", {
         "justify-center": !hasMessages,
         "justify-start": hasMessages && !isLoading,
       })}
-      style={{ maxHeight: "calc(100dvh - 28px)" }}
+      style={{
+        maxHeight: "calc(100dvh - 40px)",
+      }}
     >
       {!hasMessages && <Introduction />}
       <TextareaAutosize
@@ -160,6 +162,11 @@ export const Home = () => {
             <AccordionContent>{getErrorMessage(error)}</AccordionContent>
           </AccordionItem>
         </Accordion>
+      )}
+      {token === "EMPTY" && (
+        <div className="text-muted-foreground text-sm">
+          Verifying your browser...
+        </div>
       )}
       {!token && (
         <div className="text-destructive text-sm mt-2 px-2 text-center">
