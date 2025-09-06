@@ -111,11 +111,11 @@ export const Experience = () => {
       <div className="mb-8 text-center">
         <div className="mb-4 flex items-center justify-center gap-3">
           <Building className="h-8 w-8" />
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
             Professional Experience
           </h1>
         </div>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Delivering enterprise-scale solutions with expertise in AI
           integration, system architecture, and performance optimization across
           banking, digital transformation, and travel technology sectors.
@@ -126,7 +126,7 @@ export const Experience = () => {
         {experiences.map((exp, index) => (
           <Card
             key={index}
-            className="border-0 shadow-lg bg-gradient-to-br from-background to-background/50"
+            className="border border-border/50 shadow-lg hover:shadow-xl transition-shadow bg-card"
           >
             <CardHeader className="pb-4">
               <div className="flex flex-col w-full gap-4">
@@ -197,7 +197,7 @@ export const Experience = () => {
       </div>
 
       {/* Summary Stats */}
-      <Card className="mt-8 border-0 shadow-lg bg-gradient-to-r from-primary/10 to-primary/5">
+      <Card className="mt-8 border border-border/50 shadow-lg bg-gradient-to-r from-primary/5 to-primary/3 dark:from-primary/10 dark:to-primary/5">
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>

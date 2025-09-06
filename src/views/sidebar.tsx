@@ -1,6 +1,8 @@
+import { useTheme } from "@/components/theme-provider";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -11,7 +13,15 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 
-import { Building, GraduationCap, Home, Info, TrendingUp } from "lucide-react";
+import {
+  Building,
+  GraduationCap,
+  Home,
+  Info,
+  Moon,
+  Sun,
+  TrendingUp,
+} from "lucide-react";
 import { Link } from "react-router";
 
 const items = [
@@ -44,6 +54,7 @@ const items = [
 
 export function AppSidebar() {
   const { open, isMobile, setOpenMobile } = useSidebar();
+  const { setTheme, theme } = useTheme();
 
   const handleClick = () => {
     if (isMobile && open) {
@@ -78,6 +89,15 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <SidebarMenuButton
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          className="flex items-center gap-2 cursor-pointer hover:cursor-pointer"
+        >
+          {theme === "light" ? <Sun /> : <Moon />}
+          <span>Switch Theme</span>
+        </SidebarMenuButton>
+      </SidebarFooter>
     </Sidebar>
   );
 }

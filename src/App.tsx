@@ -2,6 +2,7 @@ import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter } from "react-router";
 import Turnstile, { useTurnstile } from "react-turnstile";
+import { ThemeProvider } from "./components/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import { useAuthenticateMutation } from "./redux/queries/auth-query";
 import { resetCompleted, setToken } from "./redux/reducers/turnstile";
@@ -28,43 +29,45 @@ function App() {
   }, [shouldReset, turnstile, dispatch]);
 
   return (
-    <BrowserRouter>
-      <Turnstile
-        fixedSize
-        sitekey={
-          production ? "0x4AAAAAABuVwktvjjjHNKe2" : "1x00000000000000000000AA"
-        }
-        appearance="interaction-only"
-        onSuccess={async (token) => {
-          console.info("Turnstile success");
-          try {
-            const response = await authenticate({ token }).unwrap();
-            if (response?.token) {
-              dispatch(setToken(response.token));
-            }
-          } catch (e) {
-            dispatch(setToken(null));
+    <ThemeProvider>
+      <BrowserRouter>
+        <Turnstile
+          fixedSize
+          sitekey={
+            production ? "0x4AAAAAABuVwktvjjjHNKe2" : "1x00000000000000000000AA"
           }
-        }}
-        onError={(error) => {
-          console.info("Turnstile error:", error);
-          dispatch(setToken(null));
-        }}
-        onExpire={() => {
-          console.info("Turnstile token expired");
-          dispatch(setToken("EMPTY"));
-        }}
-        refreshExpired="auto"
-        style={{ position: "absolute", bottom: 0, right: 0, zIndex: 1000 }}
-      />
-      <SidebarProvider>
-        <AppSidebar />
-        <main className="w-full">
-          <SidebarTrigger />
-          <AppRouter />
-        </main>
-      </SidebarProvider>
-    </BrowserRouter>
+          appearance="interaction-only"
+          onSuccess={async (token) => {
+            console.info("Turnstile success");
+            try {
+              const response = await authenticate({ token }).unwrap();
+              if (response?.token) {
+                dispatch(setToken(response.token));
+              }
+            } catch (e) {
+              dispatch(setToken(null));
+            }
+          }}
+          onError={(error) => {
+            console.info("Turnstile error:", error);
+            dispatch(setToken(null));
+          }}
+          onExpire={() => {
+            console.info("Turnstile token expired");
+            dispatch(setToken("EMPTY"));
+          }}
+          refreshExpired="auto"
+          style={{ position: "absolute", bottom: 0, right: 0, zIndex: 1000 }}
+        />
+        <SidebarProvider>
+          <AppSidebar />
+          <main className="w-full">
+            <SidebarTrigger className="size-10 m-1" />
+            <AppRouter />
+          </main>
+        </SidebarProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

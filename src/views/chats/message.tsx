@@ -14,8 +14,8 @@ export const Message: FC<MessageProps> = ({ message, role }) => {
       className={cn(
         "py-2 px-4 my-2 rounded-lg shadow-md w-fit max-w-[80%] last:pb-4",
         {
-          "bg-black text-white self-end": isUser,
-          "bg-gray-100 self-start": !isUser,
+          "bg-primary text-primary-foreground self-end": isUser,
+          "bg-muted text-foreground self-start": !isUser,
         }
       )}
     >

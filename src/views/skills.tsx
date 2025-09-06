@@ -168,7 +168,7 @@ export const Skills = () => {
         {stats.map((stat, index) => (
           <Card
             key={index}
-            className="text-center border-0 shadow-md bg-gradient-to-br from-background to-background/50"
+            className="text-center border border-border/50 shadow-md hover:shadow-lg transition-shadow bg-card"
           >
             <CardContent className="pt-6 pb-4">
               <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">
@@ -187,7 +187,7 @@ export const Skills = () => {
         {skillCategories.map((category, index) => (
           <Card
             key={index}
-            className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md bg-gradient-to-br from-background to-background/50"
+            className="group hover:shadow-lg transition-all duration-300 border border-border/50 shadow-md bg-card"
           >
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center gap-3 text-lg">

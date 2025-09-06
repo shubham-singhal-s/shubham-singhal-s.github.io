@@ -113,8 +113,8 @@ export const Home = () => {
         onHeightChange={onHeightChange}
         onFocus={onFocus}
         className={cn(
-          "border-0 border-b-2 border-b-gray-300 rounded-none min-h-1",
-          "p-2 mb-4 focus:border-b-gray-900 focus:outline-none w-[90%]",
+          "border-0 border-b-2 border-b-border rounded-none min-h-1",
+          "p-2 mb-4 focus:border-b-foreground focus:outline-none w-[90%]",
           {
             "inset-shadow-sm": showShadow,
           }
@@ -152,7 +152,7 @@ export const Home = () => {
       {error && (
         <Accordion
           type="single"
-          className="text-red-500 mt-2 decoration-0 text-center"
+          className="text-destructive mt-2 decoration-0 text-center"
           collapsible
         >
           <AccordionItem value="item-1">
@@ -162,13 +162,13 @@ export const Home = () => {
         </Accordion>
       )}
       {!token && (
-        <div className="text-red-500 text-sm mt-2 px-2 text-center">
+        <div className="text-destructive text-sm mt-2 px-2 text-center">
           Chat is temporarily unavailable because your browser couldn't be
           verified.
         </div>
       )}
       {(error || !token) && (
-        <div className="text-gray-500 text-sm mt-2 px-2 text-center">
+        <div className="text-muted-foreground text-sm mt-2 px-2 text-center">
           Please try again later, in the meantime, you can browse other sections
           of my portfolio!
         </div>
