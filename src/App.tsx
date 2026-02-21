@@ -7,6 +7,7 @@ import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import { useAuthenticateMutation } from "./redux/queries/auth-query";
 import { resetCompleted, setToken } from "./redux/reducers/turnstile";
 import { AppRouter } from "./router/app-router";
+import { ChatProvider } from "./views/chats/chat-provider";
 import { AppSidebar } from "./views/sidebar";
 
 function App() {
@@ -63,7 +64,9 @@ function App() {
           <AppSidebar />
           <main className="w-full max-h-dvh">
             <SidebarTrigger className="size-10 m-1" />
-            <AppRouter />
+            <ChatProvider>
+              <AppRouter />
+            </ChatProvider>
           </main>
         </SidebarProvider>
       </BrowserRouter>

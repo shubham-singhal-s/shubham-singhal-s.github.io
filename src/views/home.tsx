@@ -8,19 +8,19 @@ import { Button } from "@/components/ui/button";
 import { getErrorMessage } from "@/lib/getErrorMessage";
 import { cn } from "@/lib/utils";
 import { useSendChatMutation } from "@/redux/queries/cv-api-query";
-import type { GeminiChatMessage } from "@/types/ai";
 import { BrushCleaning, Loader, Send } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TextareaAutosize from "react-textarea-autosize";
 import { Chat } from "./chats/chat";
+import { useChat } from "./chats/chat-provider";
 import { Introduction } from "./chats/introduction";
 
 export const Home = () => {
   const [sendChat, { data, isLoading, error, reset }] = useSendChatMutation();
   const [showShadow, setShowShadow] = useState(false);
   const [value, setValue] = useState("");
-  const [messages, setMessages] = useState<GeminiChatMessage[]>([]);
+  const { messages, setMessages } = useChat();
 
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -51,7 +51,7 @@ export const Home = () => {
 
   const loading = useMemo(
     () => isLoading || token === "EMPTY",
-    [isLoading, token]
+    [isLoading, token],
   );
 
   const onHeightChange = (height: number) => {
@@ -119,7 +119,7 @@ export const Home = () => {
           "p-2 mb-4 focus:border-b-foreground focus:outline-none w-[90%]",
           {
             "inset-shadow-sm": showShadow,
-          }
+          },
         )}
         placeholder={"Ask me anything..."}
         maxRows={6}
@@ -130,7 +130,7 @@ export const Home = () => {
       <div
         className={cn(
           "pb-2 flex flex-row items-center gap-4 justify-center w-full",
-          { "border-b-1": hasMessages }
+          { "border-b-1": hasMessages },
         )}
       >
         <Button
