@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useMemo, type FC } from "react";
 import ReactMarkdown from "react-markdown";
+import { MessageLink } from "./message-link";
 
 export interface MessageProps {
   message: string;
@@ -16,13 +17,13 @@ export const Message: FC<MessageProps> = ({ message, role }) => {
         {
           "bg-primary text-primary-foreground self-end": isUser,
           "bg-muted text-foreground self-start": !isUser,
-        }
+        },
       )}
     >
       {isUser ? (
         <span className="whitespace-pre-wrap text-sm">{message}</span>
       ) : (
-        <ReactMarkdown>{message}</ReactMarkdown>
+        <ReactMarkdown components={{ a: MessageLink }}>{message}</ReactMarkdown>
       )}
     </div>
   );
